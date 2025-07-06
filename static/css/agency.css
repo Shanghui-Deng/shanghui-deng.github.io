@@ -911,7 +911,7 @@ i.fas {
 
 .publication {
     display: grid;
-    grid-template-columns: 22% 78%;
+    grid-template-columns: 20% 80%;
 }
 
 .publication .publication-left img {
