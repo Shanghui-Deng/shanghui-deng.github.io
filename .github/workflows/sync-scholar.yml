@@ -40,7 +40,7 @@ jobs:
           SNAPSHOTS_DATABASE_ID: ${{ secrets.SNAPSHOTS_DATABASE_ID }}
           SCHOLAR_AUTHOR_ID: 9RAuZ4YAAAAJ
           SCHOLAR_FEED_PATH: static/data/scholar-citations.json
-          SYNC_INTERVAL_HOURS: 72
+          SYNC_INTERVAL_HOURS: 24
           FORCE_SYNC: ${{ github.event_name == 'workflow_dispatch' && inputs.force || 'false' }}
         run: scholar-notion-sync
       - name: Commit updated data interface
