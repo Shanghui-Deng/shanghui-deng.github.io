@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scholar-notion-sync"
+version = "1.0.0"
+description = "Sync Google Scholar citation history to Notion"
+requires-python = ">=3.11"
+dependencies = ["requests>=2.32,<3"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9"]
+
+[project.scripts]
+scholar-notion-sync = "scholar_notion_sync.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
