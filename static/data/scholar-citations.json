@@ -5,9 +5,120 @@
     "profile_url": "https://scholar.google.com/citations?user=9RAuZ4YAAAAJ"
   },
   "summary": {
-    "total_citations": null,
-    "publication_count": 0
+    "total_citations": 114,
+    "publication_count": 11
   },
-  "updated_at": null,
-  "publications": []
+  "updated_at": "2026-08-31T14:28:20.301624+00:00",
+  "publications": [
+    {
+      "citation_id": "9RAuZ4YAAAAJ:eQOLeE2rZwMC",
+      "title": "Hierarchical Graph Representation Learning From a Statistical Perspective for Generalizable and Interpretable Protein-Ligand Binding Affinity Prediction",
+      "authors": "C Yao, S Li, S Deng, J Jiang, T Wang, C Tang",
+      "publication": "IEEE Transactions on Computational Biology and Bioinformatics, 2026",
+      "year": 2026,
+      "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:eQOLeE2rZwMC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:eQOLeE2rZwMC",
+      "citations": 0
+    },
+    {
+      "citation_id": "9RAuZ4YAAAAJ:YsMSGLbcyi4C",
+      "title": "Cross-level interaction and multi-granularity contrastive learning for multi-view clustering",
+      "authors": "S Deng, C Tang, X Zheng, Y Liu, K Sun, X Liu",
+      "publication": "Science China Information Sciences 69 (7), 172104, 2026",
+      "year": 2026,
+      "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:YsMSGLbcyi4C",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:YsMSGLbcyi4C",
+      "citations": 2
+    },
+    {
+      "citation_id": "9RAuZ4YAAAAJ:W7OEmFMy1HYC",
+      "title": "Game Theory Inspired Cross-View Interaction Alignment for Partially View-Aligned Clustering",
+      "authors": "S Deng, X Zheng, C Tang, L Guo, X Liu",
+      "publication": "IEEE Transactions on Pattern Analysis and Machine Intelligence, 2026",
+      "year": 2026,
+      "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:W7OEmFMy1HYC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:W7OEmFMy1HYC",
+      "citations": 2
+    },
+    {
+      "citation_id": "9RAuZ4YAAAAJ:zYLM7Y9cAGgC",
+      "title": "Find true collaborators: Banzhaf index-based cross view alignment for partially view-aligned clustering",
+      "authors": "S Deng, X Zheng, C Tang, K Sun, Y Liu, X Liu",
+      "publication": "Proceedings of the 33rd ACM International Conference on Multimedia, 2447-2456, 2025",
+      "year": 2025,
+      "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:zYLM7Y9cAGgC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:zYLM7Y9cAGgC",
+      "citations": 8
+    },
+    {
+      "citation_id": "9RAuZ4YAAAAJ:IjCSPb-OGe4C",
+      "title": "scSPAF: Cell similarity purified adaptive fusion network for single-cell multi-omics clustering",
+      "authors": "S Deng, X Zheng, C Tang, X Liu, Y Liu, S An",
+      "publication": "IEEE Transactions on Computational Biology and Bioinformatics, 2025",
+      "year": 2025,
+      "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:IjCSPb-OGe4C",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:IjCSPb-OGe4C",
+      "citations": 15
+    },
+    {
+      "citation_id": "9RAuZ4YAAAAJ:d1gkVwhDpl0C",
+      "title": "VTIL: A multi-layer indoor location algorithm for RSSI images based on vision transformer",
+      "authors": "H Zhou, J Yang, S Deng, W Zhang",
+      "publication": "Engineering Research Express 6 (1), 015069, 2024",
+      "year": 2024,
+      "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:d1gkVwhDpl0C",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:d1gkVwhDpl0C",
+      "citations": 22
+    },
+    {
+      "citation_id": "9RAuZ4YAAAAJ:u5HHmVD_uO8C",
+      "title": "RRIFLoc: Radio robust image fingerprint indoor localization algorithm based on deep residual networks",
+      "authors": "S Deng, W Zhang, L Xu, J Yang",
+      "publication": "IEEE Sensors Journal 23 (3), 3233-3242, 2023",
+      "year": 2023,
+      "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:u5HHmVD_uO8C",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:u5HHmVD_uO8C",
+      "citations": 36
+    },
+    {
+      "citation_id": "9RAuZ4YAAAAJ:9yKSN-GCB0IC",
+      "title": "Wi-Fi indoor 3D localization algorithm based on multi-classifier fusion",
+      "authors": "C Wu, W Zhang, J Yang, S Deng",
+      "publication": "Engineering Research Express 4 (3), 035042, 2022",
+      "year": 2022,
+      "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:9yKSN-GCB0IC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:9yKSN-GCB0IC",
+      "citations": 4
+    },
+    {
+      "citation_id": "9RAuZ4YAAAAJ:2osOgNQ5qMEC",
+      "title": "Calibration-free 3d indoor positioning algorithms based on dnn and diff",
+      "authors": "J Yang, S Deng, L Xu, W Zhang",
+      "publication": "Sensors 22 (15), 5891, 2022",
+      "year": 2022,
+      "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:2osOgNQ5qMEC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:2osOgNQ5qMEC",
+      "citations": 14
+    },
+    {
+      "citation_id": "9RAuZ4YAAAAJ:u-x6o8ySG0sC",
+      "title": "An adaptive calibration algorithm based on RSSI and LDPLM for indoor ranging and positioning",
+      "authors": "J Yang, S Deng, M Lin, L Xu",
+      "publication": "Sensors 22 (15), 5689, 2022",
+      "year": 2022,
+      "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:u-x6o8ySG0sC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:u-x6o8ySG0sC",
+      "citations": 11
+    },
+    {
+      "citation_id": "9RAuZ4YAAAAJ:ufrVoPGSRksC",
+      "title": "Spot-Adaptive Structural Rectification for Spatially Resolved Transcriptomics Data Clustering",
+      "authors": "H Zhao, S Deng, S Li, K Sun, W Yan, C Tang",
+      "publication": "",
+      "year": null,
+      "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:ufrVoPGSRksC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:ufrVoPGSRksC",
+      "citations": 0
+    }
+  ]
 }
