@@ -912,6 +912,8 @@ i.fas {
 .publication {
     display: grid;
     grid-template-columns: 25% 75%;
+    flex: 0 0 100%;
+    width: 100%;
 }
 
 .publication .publication-left img {
@@ -1157,41 +1159,6 @@ i.fas {
  *  Publication Groups, Actions, and Mobile Layout
  **************************************************/
 
-.publication-year-heading {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin: 18px 0 16px;
-  color: #3170a5;
-  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.publication-year-heading::after {
-  flex: 1;
-  height: 1px;
-  margin-left: 12px;
-  content: '';
-  background: linear-gradient(to right, rgba(49, 112, 165, 0.35), transparent);
-}
-
-.publication-year-heading span {
-  display: inline-flex;
-  padding: 3px 10px;
-  background: rgba(49, 112, 165, 0.09);
-  border: 1px solid rgba(49, 112, 165, 0.18);
-  border-radius: 999px;
-}
-
-.publication-era-note {
-  width: 100%;
-  margin: -4px 0 14px;
-  color: #6c757d;
-  font-size: 0.88rem;
-  text-align: left;
-}
-
 .publication-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1310,9 +1277,5 @@ a.publication-link--bibtex:focus {
 
   .publication .publication-right .publication-content {
     border-radius: 0 0 6px 6px;
-  }
-
-  .publication-year-heading {
-    margin-top: 12px;
   }
 }
