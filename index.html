@@ -104,15 +104,16 @@ layout: default
       <p style="text-align:left"> &nbsp;&nbsp;Most recent publications on 
         <a href="https://scholar.google.com/citations?hl=zh-CN&user=9RAuZ4YAAAAJ">Google Scholar</a>.
         &nbsp;&nbsp;
-       <a data-total-citations
+       <a class="citation-badge total-citation-badge"
+          data-total-citations
           href="https://scholar.google.com/citations?user=9RAuZ4YAAAAJ"
           target="_blank"
           rel="noopener"
           aria-label="Google Scholar total citations"
           title="Google Scholar total citations">
-        <img class="total-citation-image"
-             src="https://img.shields.io/badge/citations-0-4285F4?logo=googlescholar&logoColor=white"
-             alt="Google Scholar total citations">
+        <i class="ai ai-google-scholar" aria-hidden="true"></i>
+        <span class="citation-label">Citations</span>
+        <span class="citation-count">0</span>
       </a>
       </p>
      <!-- publication 10 -->
@@ -665,14 +666,10 @@ layout: default
 
         if (totalBadge && data.summary) {
           var totalCitations = data.summary.total_citations || 0;
-          var totalImage = totalBadge.querySelector('.total-citation-image');
-          totalImage.src = 'https://img.shields.io/badge/citations-' +
-            encodeURIComponent(totalCitations) +
-            '-4285F4?logo=googlescholar&logoColor=white';
-          totalImage.alt = 'Google Scholar total citations: ' + totalCitations;
+          totalBadge.querySelector('.citation-count').textContent = totalCitations;
           totalBadge.href = data.author.profile_url || totalBadge.href;
-          totalBadge.title = totalImage.alt;
-          totalBadge.setAttribute('aria-label', totalImage.alt);
+          totalBadge.title = 'Google Scholar total citations: ' + totalCitations;
+          totalBadge.setAttribute('aria-label', totalBadge.title);
         }
 
         (data.publications || []).forEach(function (publication) {
