@@ -1287,26 +1287,15 @@ a.publication-link--bibtex:focus {
 }
 
 
-/* Unify publication cards with the rounded Service panel style. */
-#publications .publication {
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid rgba(49, 112, 165, 0.14);
+/* Keep publication artwork and information as separate rounded panels. */
+#publications .publication .publication-left img {
+  border: 1px solid rgba(49, 112, 165, 0.12);
   border-radius: 8px;
   box-shadow: -5px 5px 20px #eee;
 }
 
-#publications .publication .publication-left {
-  overflow: hidden;
-  background: #fff;
-}
-
-#publications .publication .publication-left img {
-  border-radius: 0;
-  box-shadow: none;
-}
-
 #publications .publication .publication-right .publication-content {
-  border-radius: 0;
-  box-shadow: none;
+  border: 1px solid rgba(49, 112, 165, 0.14);
+  border-radius: 8px;
+  box-shadow: -5px 5px 20px #eee;
 }
