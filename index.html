@@ -104,8 +104,15 @@ layout: default
       <p style="text-align:left"> &nbsp;&nbsp;Most recent publications on 
         <a href="https://scholar.google.com/citations?hl=zh-CN&user=9RAuZ4YAAAAJ">Google Scholar</a>.
         &nbsp;&nbsp;
-       <a href="https://scholar.google.com/citations?user=9RAuZ4YAAAAJ" target="_blank" rel="noopener">
-        <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fgoogle-scholar-badge.vercel.app%2Fcitations%3Fuser%3D9RAuZ4YAAAAJ" alt="谷歌学术引用">
+       <a class="citation-badge total-citation-badge"
+          data-total-citations
+          href="https://scholar.google.com/citations?user=9RAuZ4YAAAAJ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Google Scholar total citations"
+          title="Google Scholar total citations">
+        <i class="ai ai-google-scholar" aria-hidden="true"></i>
+        <span class="citation-count">0</span>
       </a>
       </p>
      <!-- publication 10 -->
@@ -644,7 +651,8 @@ layout: default
 <script>
   (function () {
     var badges = document.querySelectorAll('.citation-badge[data-citation-title]');
-    if (!badges.length) return;
+    var totalBadge = document.querySelector('.citation-badge[data-total-citations]');
+    if (!badges.length && !totalBadge) return;
 
     var normalizeTitle = function (title) {
       return title.toLowerCase().replace(/[^a-z0-9]+/g, '');
@@ -654,6 +662,14 @@ layout: default
       .then(function (response) { return response.json(); })
       .then(function (data) {
         var publicationsByTitle = {};
+
+        if (totalBadge && data.summary) {
+          var totalCitations = data.summary.total_citations || 0;
+          totalBadge.querySelector('.citation-count').textContent = totalCitations;
+          totalBadge.href = data.author.profile_url || totalBadge.href;
+          totalBadge.title = 'Google Scholar total citations: ' + totalCitations;
+          totalBadge.setAttribute('aria-label', totalBadge.title);
+        }
 
         (data.publications || []).forEach(function (publication) {
           publicationsByTitle[normalizeTitle(publication.title)] = publication;
