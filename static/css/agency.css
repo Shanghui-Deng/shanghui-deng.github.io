@@ -1133,11 +1133,21 @@ i.fas {
 }
 
 
-/* Keep the transition from Publications to Service compact. */
+/* Keep transitions between the main sections visually balanced. */
+#about {
+  padding-bottom: 20px;
+}
+
 #publications {
+  padding-top: 25px;
   padding-bottom: 20px;
 }
 
 #service {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#contact {
   padding-top: 20px;
 }
