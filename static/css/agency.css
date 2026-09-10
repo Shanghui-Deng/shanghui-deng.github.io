@@ -1279,3 +1279,9 @@ a.publication-link--bibtex:focus {
     border-radius: 0 0 6px 6px;
   }
 }
+
+
+/* Keep a clear rhythm between consecutive publication cards. */
+#publications .publication {
+  margin-bottom: 24px;
+}
