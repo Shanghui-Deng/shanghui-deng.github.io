@@ -115,7 +115,18 @@ layout: default
         </div>
         <div class="publication-right" >
           <div class="text-muted publication-content">
-            <h5 class="pub-title">Implicit Rank-minimizing Representation-based Cross-view Interaction and Fusion for Multi-view Clustering</h5>
+            <h5 class="pub-title">Implicit Rank-minimizing Representation-based Cross-view Interaction and Fusion for Multi-view Clustering
+              <a class="citation-badge"
+                 data-citation-title="Implicit Rank-minimizing Representation-based Cross-view Interaction and Fusion for Multi-view Clustering"
+                 href="https://scholar.google.com/citations?user=9RAuZ4YAAAAJ"
+                 target="_blank"
+                 rel="noopener"
+                 aria-label="Google Scholar citations"
+                 title="Google Scholar citations">
+                <i class="ai ai-google-scholar" aria-hidden="true"></i>
+                <span class="citation-count">0</span>
+              </a>
+            </h5>
             <div class="pub-authors">
                <b>Shanghui Deng</b>, Xiao Zheng, Weiqing Yan, Kun Sun, Chang Tang, Xinwang Liu
             </div>
@@ -508,6 +519,36 @@ layout: default
 </section>
 
 
+
+<script>
+  (function () {
+    var badge = document.querySelector('.citation-badge[data-citation-title]');
+    if (!badge) return;
+
+    var normalizeTitle = function (title) {
+      return title.toLowerCase().replace(/[^a-z0-9]+/g, '');
+    };
+
+    fetch('{{ site.baseurl }}/static/data/scholar-citations.json')
+      .then(function (response) { return response.json(); })
+      .then(function (data) {
+        var targetTitle = normalizeTitle(badge.dataset.citationTitle);
+        var publication = (data.publications || []).find(function (item) {
+          return normalizeTitle(item.title) === targetTitle;
+        });
+
+        if (!publication) return;
+
+        badge.querySelector('.citation-count').textContent = publication.citations;
+        badge.href = publication.scholar_url || data.author.profile_url;
+        badge.title = 'Google Scholar citations: ' + publication.citations;
+        badge.setAttribute('aria-label', badge.title);
+      })
+      .catch(function () {
+        /* Keep the unobtrusive fallback count when the feed is unavailable. */
+      });
+  }());
+</script>
 
 <script type="application/ld+json">
 {
