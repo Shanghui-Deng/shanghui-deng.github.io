@@ -1013,6 +1013,10 @@ i.fas {
   box-shadow: -5px 5px 20px #eee;
 }
 
+.service-panel + .service-panel {
+  margin-top: 18px;
+}
+
 .service-panel-title {
   display: flex;
   align-items: center;
