@@ -1131,3 +1131,13 @@ i.fas {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Keep the transition from Publications to Service compact. */
+#publications {
+  padding-bottom: 20px;
+}
+
+#service {
+  padding-top: 20px;
+}
