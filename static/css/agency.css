@@ -1299,3 +1299,16 @@ a.publication-link--bibtex:focus {
   border-radius: 8px;
   box-shadow: -5px 5px 20px #eee;
 }
+
+
+/* Compact transition between recent publications and earlier work. */
+.publication-transition {
+  flex: 0 0 100%;
+  width: 100%;
+  margin: 0 0 18px !important;
+  padding-left: 2px;
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: left;
+}
