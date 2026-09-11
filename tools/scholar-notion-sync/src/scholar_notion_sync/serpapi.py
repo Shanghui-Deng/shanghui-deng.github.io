@@ -32,6 +32,7 @@ class SerpApiClient:
     def fetch_profile(self, author_id: str) -> ScholarProfile:
         articles: dict[str, Article] = {}
         total_citations: int | None = None
+        metrics: dict[str, Any] | None = None
         start = 0
 
         while True:
@@ -55,6 +56,7 @@ class SerpApiClient:
 
             if total_citations is None:
                 total_citations = self._total_citations(payload)
+                metrics = self._citation_metrics(payload)
 
             page = payload.get("articles") or []
             for raw in page:
@@ -67,7 +69,61 @@ class SerpApiClient:
 
         if total_citations is None:
             raise RuntimeError("SerpAPI response did not contain a citation total")
-        return ScholarProfile(total_citations, list(articles.values()))
+        metrics = metrics or {}
+        return ScholarProfile(
+            total_citations=total_citations,
+            articles=list(articles.values()),
+            citations_since=metrics.get("citations_since", 0),
+            h_index=metrics.get("h_index", 0),
+            h_index_since=metrics.get("h_index_since", 0),
+            i10_index=metrics.get("i10_index", 0),
+            i10_index_since=metrics.get("i10_index_since", 0),
+            since_year=metrics.get("since_year"),
+            citations_by_year=metrics.get("citations_by_year", []),
+        )
+
+    @staticmethod
+    def _citation_metrics(payload: dict[str, Any]) -> dict[str, Any]:
+        cited_by = payload.get("cited_by") or {}
+        table = cited_by.get("table") or []
+
+        def row_values(name: str) -> dict[str, Any]:
+            for row in table:
+                values = row.get(name)
+                if isinstance(values, dict):
+                    return values
+            return {}
+
+        citations = row_values("citations")
+        h_index = row_values("h_index")
+        i10_index = row_values("i10_index")
+        since_key = next((key for key in citations if key.startswith("since_")), None)
+        since_year = None
+        if since_key:
+            try:
+                since_year = int(since_key.removeprefix("since_"))
+            except ValueError:
+                since_year = None
+
+        graph: list[dict[str, int]] = []
+        for point in cited_by.get("graph") or []:
+            try:
+                graph.append({
+                    "year": int(point["year"]),
+                    "citations": int(point.get("citations") or 0),
+                })
+            except (KeyError, TypeError, ValueError):
+                continue
+
+        return {
+            "citations_since": int(citations.get(since_key, 0)) if since_key else 0,
+            "h_index": int(h_index.get("all", 0)),
+            "h_index_since": int(h_index.get(since_key, 0)) if since_key else 0,
+            "i10_index": int(i10_index.get("all", 0)),
+            "i10_index_since": int(i10_index.get(since_key, 0)) if since_key else 0,
+            "since_year": since_year,
+            "citations_by_year": graph,
+        }
 
     @staticmethod
     def _total_citations(payload: dict[str, Any]) -> int:
