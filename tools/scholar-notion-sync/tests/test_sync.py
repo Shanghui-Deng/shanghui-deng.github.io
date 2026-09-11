@@ -126,7 +126,17 @@ def test_writes_stable_homepage_feed(tmp_path):
     import json
 
     payload = json.loads(feed.read_text(encoding="utf-8"))
-    assert payload["schema_version"] == 1
+    assert payload["schema_version"] == 2
     assert payload["author"]["scholar_id"] == "author"
-    assert payload["summary"] == {"total_citations": 5, "publication_count": 1}
+    assert payload["summary"] == {
+        "total_citations": 5,
+        "citations_since": 0,
+        "h_index": 0,
+        "h_index_since": 0,
+        "i10_index": 0,
+        "i10_index_since": 0,
+        "since_year": None,
+        "publication_count": 1,
+    }
+    assert payload["citations_by_year"] == []
     assert payload["publications"][0]["citation_id"] == "author:paper"
