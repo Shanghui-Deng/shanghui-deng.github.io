@@ -700,8 +700,6 @@ layout: default
           var sinceYear = document.querySelector('[data-scholar-since-year]');
           if (sinceYear) sinceYear.textContent = data.summary.since_year || '—';
         }
-        renderCitationChart(data.citations_by_year || []);
-
         if (totalBadge && data.summary) {
           var totalCitations = data.summary.total_citations || 0;
           totalBadge.querySelector('.citation-count').textContent = totalCitations;
