@@ -1,11 +1,17 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "author": {
     "scholar_id": "9RAuZ4YAAAAJ",
     "profile_url": "https://scholar.google.com/citations?user=9RAuZ4YAAAAJ"
   },
   "summary": {
     "total_citations": 115,
+    "citations_since": 115,
+    "h_index": 6,
+    "h_index_since": 6,
+    "i10_index": 5,
+    "i10_index_since": 5,
+    "since_year": 2021,
     "publication_count": 11
   },
   "updated_at": "2026-09-10T03:03:35.133840+00:00",
@@ -119,6 +125,28 @@
       "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:ufrVoPGSRksC",
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:ufrVoPGSRksC",
       "citations": 0
+    }
+  ],
+  "citations_by_year": [
+    {
+      "year": 2022,
+      "citations": 1
+    },
+    {
+      "year": 2023,
+      "citations": 10
+    },
+    {
+      "year": 2024,
+      "citations": 20
+    },
+    {
+      "year": 2025,
+      "citations": 40
+    },
+    {
+      "year": 2026,
+      "citations": 44
     }
   ]
 }
