@@ -111,15 +111,6 @@ layout: default
               </a>
             </p>
           </div>
-          <aside class="scholar-stats-card" aria-label="Google Scholar citation statistics">
-            <div class="scholar-stats-table">
-              <div></div><div>All</div><div>Since <span data-scholar-since-year>—</span></div>
-              <div>Citations</div><strong data-scholar-stat="total_citations">0</strong><strong data-scholar-stat="citations_since">0</strong>
-              <div>h-index</div><strong data-scholar-stat="h_index">0</strong><strong data-scholar-stat="h_index_since">0</strong>
-              <div>i10-index</div><strong data-scholar-stat="i10_index">0</strong><strong data-scholar-stat="i10_index_since">0</strong>
-            </div>
-            <div class="scholar-citation-chart" data-scholar-chart role="img" aria-label="Citations by year"></div>
-          </aside>
         </div>
         <hr class="publications-divider"/>
       </div>
@@ -694,40 +685,6 @@ layout: default
 
     var normalizeTitle = function (title) {
       return title.toLowerCase().replace(/[^a-z0-9]+/g, '');
-    };
-
-    var renderCitationChart = function (points) {
-      var chart = document.querySelector('[data-scholar-chart]');
-      if (!chart || !points || !points.length) return;
-      var maxCitations = Math.max.apply(null, points.map(function (point) {
-        return Number(point.citations) || 0;
-      })) || 1;
-      chart.innerHTML = '';
-      points.forEach(function (point) {
-        var column = document.createElement('div');
-        column.className = 'scholar-chart-column';
-        column.tabIndex = 0;
-        column.setAttribute('aria-label', point.year + ': ' + point.citations + ' citations');
-        var value = document.createElement('span');
-        value.className = 'scholar-chart-value';
-        value.textContent = point.citations;
-        var track = document.createElement('span');
-        track.className = 'scholar-chart-track';
-        var bar = document.createElement('span');
-        bar.className = 'scholar-chart-bar';
-        bar.style.height = Math.max(3, (Number(point.citations) || 0) / maxCitations * 100) + '%';
-        var year = document.createElement('span');
-        year.className = 'scholar-chart-year';
-        year.textContent = point.year;
-        track.appendChild(bar);
-        column.appendChild(value);
-        column.appendChild(track);
-        column.appendChild(year);
-        chart.appendChild(column);
-      });
-      chart.setAttribute('aria-label', 'Citations by year: ' + points.map(function (point) {
-        return point.year + ', ' + point.citations;
-      }).join('; '));
     };
 
     fetch('{{ site.baseurl }}/static/data/scholar-citations.json')
