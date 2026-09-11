@@ -95,28 +95,42 @@ layout: default
   <div class="container">
     <!-- <div class="row justify-content-md-center text-center"> -->
     <div class="row text-center">
-      <div class="col-md-12" style="text-align:left">
-        <h1 class="section-subheading" style="text-align:left; margin-left:-14px">Selected Publications</h1>
+      <div class="col-md-12">
+        <div class="publications-overview">
+          <div class="publications-overview-copy">
+            <h1 class="section-subheading">Selected Publications</h1>
+            <p>Most recent publications on
+              <a href="https://scholar.google.com/citations?hl=zh-CN&user=9RAuZ4YAAAAJ">Google Scholar</a>.
+              <a class="citation-badge total-citation-badge" data-total-citations
+                 href="https://scholar.google.com/citations?user=9RAuZ4YAAAAJ"
+                 target="_blank" rel="noopener" aria-label="Google Scholar total citations"
+                 title="Google Scholar total citations">
+                <i class="ai ai-google-scholar" aria-hidden="true"></i>
+                <span class="citation-label">Citations</span>
+                <span class="citation-count">0</span>
+              </a>
+            </p>
+          </div>
+          <aside class="scholar-stats-card" aria-label="Google Scholar citation statistics">
+            <div class="scholar-stats-title"><span>Cited by</span>
+              <a href="https://scholar.google.com/citations?user=9RAuZ4YAAAAJ"
+                 target="_blank" rel="noopener" aria-label="Open Google Scholar profile">
+                <i class="ai ai-google-scholar" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="scholar-stats-table">
+              <div></div><div>All</div><div>Since <span data-scholar-since-year>—</span></div>
+              <div>Citations</div><strong data-scholar-stat="total_citations">0</strong><strong data-scholar-stat="citations_since">0</strong>
+              <div>h-index</div><strong data-scholar-stat="h_index">0</strong><strong data-scholar-stat="h_index_since">0</strong>
+              <div>i10-index</div><strong data-scholar-stat="i10_index">0</strong><strong data-scholar-stat="i10_index_since">0</strong>
+            </div>
+            <div class="scholar-citation-chart" data-scholar-chart role="img" aria-label="Citations by year"></div>
+          </aside>
+        </div>
+        <hr class="publications-divider"/>
       </div>
 
-      <hr/>
 
-      <!-- <p style="text-align:left"> &nbsp;&nbsp;<sup>†</sup> indicates equal contribution.  </p> -->
-      <p style="text-align:left"> &nbsp;&nbsp;Most recent publications on 
-        <a href="https://scholar.google.com/citations?hl=zh-CN&user=9RAuZ4YAAAAJ">Google Scholar</a>.
-        &nbsp;&nbsp;
-       <a class="citation-badge total-citation-badge"
-          data-total-citations
-          href="https://scholar.google.com/citations?user=9RAuZ4YAAAAJ"
-          target="_blank"
-          rel="noopener"
-          aria-label="Google Scholar total citations"
-          title="Google Scholar total citations">
-        <i class="ai ai-google-scholar" aria-hidden="true"></i>
-        <span class="citation-label">Citations</span>
-        <span class="citation-count">0</span>
-      </a>
-      </p>
      <!-- publication 10 -->
       <div class="publication">
         <div class="publication-left">
@@ -688,10 +702,52 @@ layout: default
       return title.toLowerCase().replace(/[^a-z0-9]+/g, '');
     };
 
+    var renderCitationChart = function (points) {
+      var chart = document.querySelector('[data-scholar-chart]');
+      if (!chart || !points || !points.length) return;
+      var maxCitations = Math.max.apply(null, points.map(function (point) {
+        return Number(point.citations) || 0;
+      })) || 1;
+      chart.innerHTML = '';
+      points.forEach(function (point) {
+        var column = document.createElement('div');
+        column.className = 'scholar-chart-column';
+        var value = document.createElement('span');
+        value.className = 'scholar-chart-value';
+        value.textContent = point.citations;
+        var track = document.createElement('span');
+        track.className = 'scholar-chart-track';
+        var bar = document.createElement('span');
+        bar.className = 'scholar-chart-bar';
+        bar.style.height = Math.max(3, (Number(point.citations) || 0) / maxCitations * 100) + '%';
+        var year = document.createElement('span');
+        year.className = 'scholar-chart-year';
+        year.textContent = point.year;
+        track.appendChild(bar);
+        column.appendChild(value);
+        column.appendChild(track);
+        column.appendChild(year);
+        chart.appendChild(column);
+      });
+      chart.setAttribute('aria-label', 'Citations by year: ' + points.map(function (point) {
+        return point.year + ', ' + point.citations;
+      }).join('; '));
+    };
+
     fetch('{{ site.baseurl }}/static/data/scholar-citations.json')
       .then(function (response) { return response.json(); })
       .then(function (data) {
         var publicationsByTitle = {};
+
+        if (data.summary) {
+          document.querySelectorAll('[data-scholar-stat]').forEach(function (element) {
+            var key = element.getAttribute('data-scholar-stat');
+            element.textContent = data.summary[key] == null ? '—' : data.summary[key];
+          });
+          var sinceYear = document.querySelector('[data-scholar-since-year]');
+          if (sinceYear) sinceYear.textContent = data.summary.since_year || '—';
+        }
+        renderCitationChart(data.citations_by_year || []);
 
         if (totalBadge && data.summary) {
           var totalCitations = data.summary.total_citations || 0;
