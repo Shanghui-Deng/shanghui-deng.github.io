@@ -124,16 +124,23 @@ class CitationSynchronizer:
     def _write_feed(self, profile: ScholarProfile, now: datetime) -> None:
         """Publish the stable interface consumed by the homepage in the future."""
         payload = {
-            "schema_version": 1,
+            "schema_version": 2,
             "author": {
                 "scholar_id": self.author_id,
                 "profile_url": f"https://scholar.google.com/citations?user={self.author_id}",
             },
             "summary": {
                 "total_citations": profile.total_citations,
+                "citations_since": profile.citations_since,
+                "h_index": profile.h_index,
+                "h_index_since": profile.h_index_since,
+                "i10_index": profile.i10_index,
+                "i10_index_since": profile.i10_index_since,
+                "since_year": profile.since_year,
                 "publication_count": len(profile.articles),
             },
             "updated_at": now.isoformat(),
+            "citations_by_year": profile.citations_by_year,
             "publications": [asdict(article) for article in profile.articles],
         }
         self.feed_path.parent.mkdir(parents=True, exist_ok=True)
