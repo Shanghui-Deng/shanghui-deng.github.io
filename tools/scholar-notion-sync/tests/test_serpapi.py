@@ -25,7 +25,14 @@ class Session:
 def test_parses_profile_and_article():
     session = Session(
         [{
-            "cited_by": {"table": [{"citations": {"all": 123}}]},
+            "cited_by": {
+                "table": [
+                    {"citations": {"all": 123, "since_2021": 100}},
+                    {"h_index": {"all": 6, "since_2021": 5}},
+                    {"i10_index": {"all": 4, "since_2021": 3}},
+                ],
+                "graph": [{"year": 2025, "citations": 40}],
+            },
             "articles": [{
                 "citation_id": "9RAuZ4YAAAAJ:abc",
                 "title": "A paper",
@@ -41,6 +48,13 @@ def test_parses_profile_and_article():
     assert profile.total_citations == 123
     assert profile.articles[0].citations == 7
     assert profile.articles[0].year == 2026
+    assert profile.citations_since == 100
+    assert profile.h_index == 6
+    assert profile.h_index_since == 5
+    assert profile.i10_index == 4
+    assert profile.i10_index_since == 3
+    assert profile.since_year == 2021
+    assert profile.citations_by_year == [{"year": 2025, "citations": 40}]
 
 
 def test_paginates_at_one_hundred_results():
