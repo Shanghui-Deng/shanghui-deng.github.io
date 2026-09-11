@@ -1032,7 +1032,7 @@ i.fas {
   justify-content: center;
   flex: 0 0 42px;
   width: 42px;
-  height: 42px;
+  height: 40px;
   color: #3170a5;
   background: rgba(49, 112, 165, 0.09);
   border: 1px solid rgba(49, 112, 165, 0.18);
@@ -1352,7 +1352,7 @@ a.publication-link--bibtex:focus {
 }
 
 .scholar-stats-card {
-  padding: 12px 16px 10px;
+  padding: 10px 16px 8px;
   color: #313131;
   background: #fff;
   border: 1px solid rgba(49, 112, 165, 0.14);
@@ -1361,28 +1361,12 @@ a.publication-link--bibtex:focus {
   font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.scholar-stats-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 6px;
-  border-bottom: 1px solid #e6edf3;
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.scholar-stats-title a {
-  display: inline-flex;
-  color: #3170a5;
-  font-size: 1.1rem;
-}
-
 .scholar-stats-table {
   display: grid;
   grid-template-columns: minmax(82px, 1fr) 48px 76px;
   row-gap: 3px;
   align-items: center;
-  padding: 6px 0 8px;
+  padding: 0 0 6px;
   font-size: 0.74rem;
 }
 
@@ -1400,24 +1384,36 @@ a.publication-link--bibtex:focus {
   display: flex;
   align-items: flex-end;
   gap: 6px;
-  height: 72px;
-  padding: 2px 2px 0;
+  height: 66px;
+  padding: 0 2px;
   border-bottom: 1px solid #dfe3e7;
 }
 
 .scholar-chart-column {
   display: grid;
-  grid-template-rows: 12px 42px 16px;
+  grid-template-rows: 10px 40px 16px;
   flex: 1;
   min-width: 0;
-  height: 70px;
+  height: 66px;
+  outline: none;
   text-align: center;
 }
 
 .scholar-chart-value {
-  color: #6c757d;
+  color: #3170a5;
   font-size: 0.58rem;
+  font-weight: 600;
   line-height: 1;
+  opacity: 0;
+  transform: translateY(2px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.scholar-chart-column:hover .scholar-chart-value,
+.scholar-chart-column:focus .scholar-chart-value,
+.scholar-chart-column:focus-within .scholar-chart-value {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .scholar-chart-track {
@@ -1438,7 +1434,8 @@ a.publication-link--bibtex:focus {
   transition: height 0.35s ease, background-color 0.2s ease;
 }
 
-.scholar-chart-column:hover .scholar-chart-bar {
+.scholar-chart-column:hover .scholar-chart-bar,
+.scholar-chart-column:focus .scholar-chart-bar {
   background: #3170a5;
 }
 
