@@ -738,7 +738,7 @@ layout: default
     };
 
     document.querySelectorAll('.scroll-fade').forEach(function (wrapper) {
-      var scroller = wrapper.querySelector('.news-list, .service-journal-grid, .recent-coauthor-list');
+      var scroller = wrapper.querySelector('.news-list, .service-journal-grid, .recent-publications-list');
       if (!scroller) return;
       updateFade(wrapper);
       scroller.addEventListener('scroll', function () { updateFade(wrapper); }, { passive: true });
