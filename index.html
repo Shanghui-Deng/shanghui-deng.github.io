@@ -674,34 +674,63 @@ layout: default
 
       if (recentPublications.length) {
         var scrollWrapper = document.createElement('div');
-        scrollWrapper.className = 'recent-coauthor-scroll scroll-fade';
-        var coauthorList = document.createElement('div');
-        coauthorList.className = 'recent-coauthor-list';
-        coauthorList.tabIndex = 0;
-        coauthorList.setAttribute('role', 'region');
-        coauthorList.setAttribute('aria-label', 'Other recent publications');
-        scrollWrapper.appendChild(coauthorList);
+        scrollWrapper.className = 'recent-publications-scroll scroll-fade';
+        var publicationList = document.createElement('div');
+        publicationList.className = 'recent-publications-list';
+        publicationList.tabIndex = 0;
+        publicationList.setAttribute('role', 'region');
+        publicationList.setAttribute('aria-label', 'Recent publications; scroll for co-authored papers');
+        scrollWrapper.appendChild(publicationList);
         publicationParent.insertBefore(scrollWrapper, transition);
 
+        var firstAuthorPublications = [];
+        var coauthoredPublications = [];
         recentPublications.forEach(function (publication) {
           var authors = publication.querySelector('.pub-authors');
           var authorText = authors ? authors.textContent.trim().toLowerCase() : '';
-          var isFirstAuthor = authorText.indexOf('shanghui deng') === 0;
-          if (isFirstAuthor) {
+          if (authorText.indexOf('shanghui deng') === 0) {
             publication.classList.add('publication--first-author');
-            publicationParent.insertBefore(publication, scrollWrapper);
+            firstAuthorPublications.push(publication);
           } else {
-            coauthorList.appendChild(publication);
+            publication.classList.add('publication--coauthored');
+            coauthoredPublications.push(publication);
           }
         });
 
+        firstAuthorPublications.concat(coauthoredPublications).forEach(function (publication) {
+          publicationList.appendChild(publication);
+        });
         recentBreaks.forEach(function (element) { element.remove(); });
-        if (!coauthorList.children.length) scrollWrapper.remove();
+
+        var sizeToFirstAuthorPapers = function () {
+          var visibleHeight = firstAuthorPublications.reduce(function (height, publication) {
+            var style = window.getComputedStyle(publication);
+            return height + publication.getBoundingClientRect().height +
+              (parseFloat(style.marginTop) || 0) + (parseFloat(style.marginBottom) || 0);
+          }, 0);
+          if (visibleHeight > 0) publicationList.style.maxHeight = Math.ceil(visibleHeight) + 'px';
+        };
+
+        sizeToFirstAuthorPapers();
+        window.addEventListener('load', sizeToFirstAuthorPapers);
+        var resizeTimer;
+        window.addEventListener('resize', function () {
+          window.clearTimeout(resizeTimer);
+          resizeTimer = window.setTimeout(sizeToFirstAuthorPapers, 120);
+        });
+        publicationList.querySelectorAll('img').forEach(function (image) {
+          if (!image.complete) image.addEventListener('load', sizeToFirstAuthorPapers);
+        });
+
+        if (!coauthoredPublications.length) {
+          publicationList.style.maxHeight = 'none';
+          scrollWrapper.classList.add('is-at-bottom');
+        }
       }
     }
 
     var updateFade = function (wrapper) {
-      var scroller = wrapper.querySelector('.news-list, .service-journal-grid, .recent-coauthor-list');
+      var scroller = wrapper.querySelector('.news-list, .service-journal-grid, .recent-publications-list');
       if (!scroller) return;
       var atBottom = scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 2;
       var canScroll = scroller.scrollHeight > scroller.clientHeight + 2;
