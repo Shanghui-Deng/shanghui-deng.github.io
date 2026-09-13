@@ -665,22 +665,25 @@ layout: default
       var publicationParent = transition.parentNode;
       var siblings = Array.prototype.slice.call(publicationParent.children);
       var transitionIndex = siblings.indexOf(transition);
-      var olderPublications = siblings.slice(transitionIndex + 1).filter(function (element) {
+      var recentPublications = siblings.slice(0, transitionIndex).filter(function (element) {
         return element.classList.contains('publication');
       });
+      var recentBreaks = siblings.slice(0, transitionIndex).filter(function (element) {
+        return element.tagName === 'BR';
+      });
 
-      if (olderPublications.length) {
+      if (recentPublications.length) {
         var scrollWrapper = document.createElement('div');
-        scrollWrapper.className = 'older-secondary-scroll scroll-fade';
-        var secondaryList = document.createElement('div');
-        secondaryList.className = 'older-secondary-list';
-        secondaryList.tabIndex = 0;
-        secondaryList.setAttribute('role', 'region');
-        secondaryList.setAttribute('aria-label', 'Other indoor localization publications');
-        scrollWrapper.appendChild(secondaryList);
-        publicationParent.insertBefore(scrollWrapper, olderPublications[0]);
+        scrollWrapper.className = 'recent-coauthor-scroll scroll-fade';
+        var coauthorList = document.createElement('div');
+        coauthorList.className = 'recent-coauthor-list';
+        coauthorList.tabIndex = 0;
+        coauthorList.setAttribute('role', 'region');
+        coauthorList.setAttribute('aria-label', 'Other recent publications');
+        scrollWrapper.appendChild(coauthorList);
+        publicationParent.insertBefore(scrollWrapper, transition);
 
-        olderPublications.forEach(function (publication) {
+        recentPublications.forEach(function (publication) {
           var authors = publication.querySelector('.pub-authors');
           var authorText = authors ? authors.textContent.trim().toLowerCase() : '';
           var isFirstAuthor = authorText.indexOf('shanghui deng') === 0;
@@ -688,22 +691,17 @@ layout: default
             publication.classList.add('publication--first-author');
             publicationParent.insertBefore(publication, scrollWrapper);
           } else {
-            secondaryList.appendChild(publication);
+            coauthorList.appendChild(publication);
           }
         });
 
-        Array.prototype.slice.call(publicationParent.children).forEach(function (element) {
-          if (element.tagName === 'BR' && Array.prototype.indexOf.call(publicationParent.children, element) > transitionIndex) {
-            element.remove();
-          }
-        });
-
-        if (!secondaryList.children.length) scrollWrapper.remove();
+        recentBreaks.forEach(function (element) { element.remove(); });
+        if (!coauthorList.children.length) scrollWrapper.remove();
       }
     }
 
     var updateFade = function (wrapper) {
-      var scroller = wrapper.querySelector('.news-list, .service-journal-grid, .older-secondary-list');
+      var scroller = wrapper.querySelector('.news-list, .service-journal-grid, .recent-coauthor-list');
       if (!scroller) return;
       var atBottom = scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 2;
       var canScroll = scroller.scrollHeight > scroller.clientHeight + 2;
@@ -711,7 +709,7 @@ layout: default
     };
 
     document.querySelectorAll('.scroll-fade').forEach(function (wrapper) {
-      var scroller = wrapper.querySelector('.news-list, .service-journal-grid, .older-secondary-list');
+      var scroller = wrapper.querySelector('.news-list, .service-journal-grid, .recent-coauthor-list');
       if (!scroller) return;
       updateFade(wrapper);
       scroller.addEventListener('scroll', function () { updateFade(wrapper); }, { passive: true });
