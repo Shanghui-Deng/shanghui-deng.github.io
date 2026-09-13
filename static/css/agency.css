@@ -1314,16 +1314,16 @@ a.publication-link--bibtex:focus {
 
 
 /*************************************************
- *  Earlier Publications
+ *  Recent Co-authored Publications
  **************************************************/
 
-.older-secondary-scroll {
+.recent-coauthor-scroll {
   flex: 0 0 100%;
   width: 100%;
   margin-top: 2px;
 }
 
-.older-secondary-list {
+.recent-coauthor-list {
   max-height: 440px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -1334,18 +1334,18 @@ a.publication-link--bibtex:focus {
   -webkit-overflow-scrolling: touch;
 }
 
-.older-secondary-list::-webkit-scrollbar {
+.recent-coauthor-list::-webkit-scrollbar {
   display: none;
   width: 0;
   height: 0;
 }
 
-.older-secondary-list .publication:last-child {
+.recent-coauthor-list .publication:last-child {
   margin-bottom: 0;
 }
 
 @media (max-width: 767px) {
-  .older-secondary-list {
+  .recent-coauthor-list {
     max-height: 520px;
     padding-right: 2px;
   }
