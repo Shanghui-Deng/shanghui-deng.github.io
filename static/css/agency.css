@@ -1314,15 +1314,15 @@ a.publication-link--bibtex:focus {
 
 
 /*************************************************
- *  Earlier Publications Scroll
+ *  Authorship-aware Publication Groups
  **************************************************/
 
-.earlier-publications-scroll {
+.grouped-publications-scroll {
   flex: 0 0 100%;
   width: 100%;
 }
 
-.earlier-publications-list {
+.grouped-publications-list {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 2px 4px 22px 0;
@@ -1332,18 +1332,18 @@ a.publication-link--bibtex:focus {
   -webkit-overflow-scrolling: touch;
 }
 
-.earlier-publications-list::-webkit-scrollbar {
+.grouped-publications-list::-webkit-scrollbar {
   display: none;
   width: 0;
   height: 0;
 }
 
-.earlier-publications-list .publication:last-child {
+.grouped-publications-list .publication:last-child {
   margin-bottom: 0;
 }
 
 @media (max-width: 767px) {
-  .earlier-publications-list {
+  .grouped-publications-list {
     padding-right: 2px;
   }
 }
