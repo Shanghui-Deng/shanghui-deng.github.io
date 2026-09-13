@@ -1314,17 +1314,15 @@ a.publication-link--bibtex:focus {
 
 
 /*************************************************
- *  Recent Co-authored Publications
+ *  Recent Publications Scroll
  **************************************************/
 
-.recent-coauthor-scroll {
+.recent-publications-scroll {
   flex: 0 0 100%;
   width: 100%;
-  margin-top: 2px;
 }
 
-.recent-coauthor-list {
-  max-height: 440px;
+.recent-publications-list {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 2px 4px 22px 0;
@@ -1334,19 +1332,18 @@ a.publication-link--bibtex:focus {
   -webkit-overflow-scrolling: touch;
 }
 
-.recent-coauthor-list::-webkit-scrollbar {
+.recent-publications-list::-webkit-scrollbar {
   display: none;
   width: 0;
   height: 0;
 }
 
-.recent-coauthor-list .publication:last-child {
+.recent-publications-list .publication:last-child {
   margin-bottom: 0;
 }
 
 @media (max-width: 767px) {
-  .recent-coauthor-list {
-    max-height: 520px;
+  .recent-publications-list {
     padding-right: 2px;
   }
 }
