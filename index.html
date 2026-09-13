@@ -665,27 +665,27 @@ layout: default
       var publicationParent = transition.parentNode;
       var siblings = Array.prototype.slice.call(publicationParent.children);
       var transitionIndex = siblings.indexOf(transition);
-      var recentPublications = siblings.slice(0, transitionIndex).filter(function (element) {
+      var earlierPublications = siblings.slice(transitionIndex + 1).filter(function (element) {
         return element.classList.contains('publication');
       });
-      var recentBreaks = siblings.slice(0, transitionIndex).filter(function (element) {
+      var earlierBreaks = siblings.slice(transitionIndex + 1).filter(function (element) {
         return element.tagName === 'BR';
       });
 
-      if (recentPublications.length) {
+      if (earlierPublications.length) {
         var scrollWrapper = document.createElement('div');
-        scrollWrapper.className = 'recent-publications-scroll scroll-fade';
+        scrollWrapper.className = 'earlier-publications-scroll scroll-fade';
         var publicationList = document.createElement('div');
-        publicationList.className = 'recent-publications-list';
+        publicationList.className = 'earlier-publications-list';
         publicationList.tabIndex = 0;
         publicationList.setAttribute('role', 'region');
-        publicationList.setAttribute('aria-label', 'Recent publications; scroll for co-authored papers');
+        publicationList.setAttribute('aria-label', 'Earlier indoor localization publications; scroll for co-authored papers');
         scrollWrapper.appendChild(publicationList);
-        publicationParent.insertBefore(scrollWrapper, transition);
+        transition.insertAdjacentElement('afterend', scrollWrapper);
 
         var firstAuthorPublications = [];
         var coauthoredPublications = [];
-        recentPublications.forEach(function (publication) {
+        earlierPublications.forEach(function (publication) {
           var authors = publication.querySelector('.pub-authors');
           var authorText = authors ? authors.textContent.trim().toLowerCase() : '';
           if (authorText.indexOf('shanghui deng') === 0) {
@@ -700,7 +700,7 @@ layout: default
         firstAuthorPublications.concat(coauthoredPublications).forEach(function (publication) {
           publicationList.appendChild(publication);
         });
-        recentBreaks.forEach(function (element) { element.remove(); });
+        earlierBreaks.forEach(function (element) { element.remove(); });
 
         var sizeToFirstAuthorPapers = function () {
           var visibleHeight = firstAuthorPublications.reduce(function (height, publication) {
@@ -730,7 +730,7 @@ layout: default
     }
 
     var updateFade = function (wrapper) {
-      var scroller = wrapper.querySelector('.news-list, .service-journal-grid, .recent-publications-list');
+      var scroller = wrapper.querySelector('.news-list, .service-journal-grid, .earlier-publications-list');
       if (!scroller) return;
       var atBottom = scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 2;
       var canScroll = scroller.scrollHeight > scroller.clientHeight + 2;
@@ -738,7 +738,7 @@ layout: default
     };
 
     document.querySelectorAll('.scroll-fade').forEach(function (wrapper) {
-      var scroller = wrapper.querySelector('.news-list, .service-journal-grid, .recent-publications-list');
+      var scroller = wrapper.querySelector('.news-list, .service-journal-grid, .earlier-publications-list');
       if (!scroller) return;
       updateFade(wrapper);
       scroller.addEventListener('scroll', function () { updateFade(wrapper); }, { passive: true });
