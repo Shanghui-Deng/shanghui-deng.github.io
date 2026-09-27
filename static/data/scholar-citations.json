@@ -5,8 +5,8 @@
     "profile_url": "https://scholar.google.com/citations?user=9RAuZ4YAAAAJ"
   },
   "summary": {
-    "total_citations": 117,
-    "citations_since": 117,
+    "total_citations": 122,
+    "citations_since": 122,
     "h_index": 6,
     "h_index_since": 6,
     "i10_index": 5,
@@ -14,7 +14,7 @@
     "since_year": 2021,
     "publication_count": 11
   },
-  "updated_at": "2026-09-26T03:29:48.742482+00:00",
+  "updated_at": "2026-09-27T03:38:40.721272+00:00",
   "citations_by_year": [
     {
       "year": 2022,
@@ -34,7 +34,7 @@
     },
     {
       "year": 2026,
-      "citations": 46
+      "citations": 51
     }
   ],
   "publications": [
@@ -86,7 +86,7 @@
       "year": 2025,
       "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:IjCSPb-OGe4C",
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:IjCSPb-OGe4C",
-      "citations": 17
+      "citations": 18
     },
     {
       "citation_id": "9RAuZ4YAAAAJ:d1gkVwhDpl0C",
@@ -96,7 +96,7 @@
       "year": 2024,
       "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:d1gkVwhDpl0C",
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:d1gkVwhDpl0C",
-      "citations": 22
+      "citations": 23
     },
     {
       "citation_id": "9RAuZ4YAAAAJ:u5HHmVD_uO8C",
@@ -106,7 +106,7 @@
       "year": 2023,
       "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:u5HHmVD_uO8C",
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:u5HHmVD_uO8C",
-      "citations": 37
+      "citations": 38
     },
     {
       "citation_id": "9RAuZ4YAAAAJ:9yKSN-GCB0IC",
@@ -116,7 +116,7 @@
       "year": 2022,
       "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:9yKSN-GCB0IC",
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:9yKSN-GCB0IC",
-      "citations": 4
+      "citations": 5
     },
     {
       "citation_id": "9RAuZ4YAAAAJ:2osOgNQ5qMEC",
@@ -136,7 +136,7 @@
       "year": 2022,
       "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:u-x6o8ySG0sC",
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:u-x6o8ySG0sC",
-      "citations": 11
+      "citations": 12
     },
     {
       "citation_id": "9RAuZ4YAAAAJ:ufrVoPGSRksC",
