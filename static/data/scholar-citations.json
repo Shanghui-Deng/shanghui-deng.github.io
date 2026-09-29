@@ -14,7 +14,7 @@
     "since_year": 2021,
     "publication_count": 11
   },
-  "updated_at": "2026-09-27T03:38:40.721272+00:00",
+  "updated_at": "2026-09-29T04:12:25.794872+00:00",
   "citations_by_year": [
     {
       "year": 2022,
@@ -38,6 +38,16 @@
     }
   ],
   "publications": [
+    {
+      "citation_id": "9RAuZ4YAAAAJ:ufrVoPGSRksC",
+      "title": "Spot-Adaptive Structural Rectification for Spatially Resolved Transcriptomics Data Clustering",
+      "authors": "H Zhao, S Deng, S Li, K Sun, W Yan, C Tang",
+      "publication": "Proceedings of the Thirty-Fifth International Joint Conference on Artificial …, 2026",
+      "year": 2026,
+      "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:ufrVoPGSRksC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:ufrVoPGSRksC",
+      "citations": 0
+    },
     {
       "citation_id": "9RAuZ4YAAAAJ:eQOLeE2rZwMC",
       "title": "Hierarchical Graph Representation Learning From a Statistical Perspective for Generalizable and Interpretable Protein-Ligand Binding Affinity Prediction",
@@ -137,16 +147,6 @@
       "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:u-x6o8ySG0sC",
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:u-x6o8ySG0sC",
       "citations": 12
-    },
-    {
-      "citation_id": "9RAuZ4YAAAAJ:ufrVoPGSRksC",
-      "title": "Spot-Adaptive Structural Rectification for Spatially Resolved Transcriptomics Data Clustering",
-      "authors": "H Zhao, S Deng, S Li, K Sun, W Yan, C Tang",
-      "publication": "",
-      "year": null,
-      "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:ufrVoPGSRksC",
-      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:ufrVoPGSRksC",
-      "citations": 0
     }
   ]
 }
