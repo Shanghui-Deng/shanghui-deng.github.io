@@ -5,16 +5,16 @@
     "profile_url": "https://scholar.google.com/citations?user=9RAuZ4YAAAAJ"
   },
   "summary": {
-    "total_citations": 122,
-    "citations_since": 122,
+    "total_citations": 127,
+    "citations_since": 127,
     "h_index": 6,
     "h_index_since": 6,
     "i10_index": 5,
     "i10_index_since": 5,
     "since_year": 2021,
-    "publication_count": 11
+    "publication_count": 12
   },
-  "updated_at": "2026-10-01T04:07:50.776006+00:00",
+  "updated_at": "2026-10-03T03:46:51.210983+00:00",
   "citations_by_year": [
     {
       "year": 2022,
@@ -34,10 +34,20 @@
     },
     {
       "year": 2026,
-      "citations": 51
+      "citations": 56
     }
   ],
   "publications": [
+    {
+      "citation_id": "9RAuZ4YAAAAJ:LkGwnXOMwfcC",
+      "title": "Implicit Rank-Minimizing Representation-Based Cross-View Interaction and Fusion for Multiview Clustering",
+      "authors": "S Deng, X Zheng, W Yan, K Sun, C Tang, X Liu",
+      "publication": "IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2026",
+      "year": 2026,
+      "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:LkGwnXOMwfcC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:LkGwnXOMwfcC",
+      "citations": 0
+    },
     {
       "citation_id": "9RAuZ4YAAAAJ:ufrVoPGSRksC",
       "title": "Spot-Adaptive Structural Rectification for Spatially Resolved Transcriptomics Data Clustering",
@@ -66,7 +76,7 @@
       "year": 2026,
       "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:YsMSGLbcyi4C",
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:YsMSGLbcyi4C",
-      "citations": 2
+      "citations": 3
     },
     {
       "citation_id": "9RAuZ4YAAAAJ:W7OEmFMy1HYC",
@@ -76,7 +86,7 @@
       "year": 2026,
       "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:W7OEmFMy1HYC",
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:W7OEmFMy1HYC",
-      "citations": 2
+      "citations": 4
     },
     {
       "citation_id": "9RAuZ4YAAAAJ:zYLM7Y9cAGgC",
@@ -86,7 +96,7 @@
       "year": 2025,
       "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:zYLM7Y9cAGgC",
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:zYLM7Y9cAGgC",
-      "citations": 8
+      "citations": 9
     },
     {
       "citation_id": "9RAuZ4YAAAAJ:IjCSPb-OGe4C",
@@ -96,7 +106,7 @@
       "year": 2025,
       "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:IjCSPb-OGe4C",
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:IjCSPb-OGe4C",
-      "citations": 18
+      "citations": 19
     },
     {
       "citation_id": "9RAuZ4YAAAAJ:d1gkVwhDpl0C",
