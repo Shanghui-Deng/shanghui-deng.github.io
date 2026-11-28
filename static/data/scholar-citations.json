@@ -5,8 +5,8 @@
     "profile_url": "https://scholar.google.com/citations?user=9RAuZ4YAAAAJ"
   },
   "summary": {
-    "total_citations": 136,
-    "citations_since": 136,
+    "total_citations": 138,
+    "citations_since": 138,
     "h_index": 6,
     "h_index_since": 6,
     "i10_index": 6,
@@ -14,7 +14,7 @@
     "since_year": 2021,
     "publication_count": 12
   },
-  "updated_at": "2026-11-26T06:50:13.213910+00:00",
+  "updated_at": "2026-11-28T06:16:31.258917+00:00",
   "citations_by_year": [
     {
       "year": 2022,
@@ -34,7 +34,7 @@
     },
     {
       "year": 2026,
-      "citations": 65
+      "citations": 67
     }
   ],
   "publications": [
@@ -126,7 +126,7 @@
       "year": 2023,
       "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:u5HHmVD_uO8C",
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:u5HHmVD_uO8C",
-      "citations": 42
+      "citations": 43
     },
     {
       "citation_id": "9RAuZ4YAAAAJ:9yKSN-GCB0IC",
@@ -146,7 +146,7 @@
       "year": 2022,
       "article_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9RAuZ4YAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=9RAuZ4YAAAAJ:2osOgNQ5qMEC",
       "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&user=9RAuZ4YAAAAJ&citation_for_view=9RAuZ4YAAAAJ:2osOgNQ5qMEC",
-      "citations": 14
+      "citations": 15
     },
     {
       "citation_id": "9RAuZ4YAAAAJ:u-x6o8ySG0sC",
